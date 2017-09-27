@@ -11,3 +11,15 @@
 	<iomanip>
 	"Class_Complex.h"
 
+1506484628 source:e:\ctemp\project\c++ practice\class_complex\class_complex.cpp
+	"Class_Complex.h"
+
+1506484736 e:\ctemp\project\c++ practice\class_complex\class_complex.h
+	<cmath>
+	<iostream>
+
+1506484644 source:e:\ctemp\project\c++ practice\class_complex\class_complexmain.cpp
+	<iostream>
+	<iomanip>
+	"Class_Complex.h"
+

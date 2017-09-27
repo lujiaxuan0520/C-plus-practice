@@ -7,11 +7,12 @@ using namespace std;
 int main()
 {
 	Complex c;
-    cout<<c.get_real()<<'\n'<<c.get_imag()<<endl;
-    c.Show();
-    c.SetComplex(3,2);
-    cout<<c.get_real()<<'\n'<<c.get_imag()<<endl;
-    c.Show();
-    cout<<c.radius()<<endl;
+    c.SetComplex(3,4);
+    Complex c1,t1,t2;
+    c1.SetComplex(4,-1);
+    t1=c+c1;
+    t2=c-c1;
+    t1.Show();
+    t2.Show();
 	return 0;
 }

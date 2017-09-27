@@ -13,6 +13,8 @@ public:
     void SetComplex(double r,double i);
     void Show() const;
     double radius() const;
+    friend Complex operator+(const Complex& a,const Complex &b );
+    friend Complex operator-(const Complex& a,const Complex &b );
 private:
     double real;
     double imag;
