@@ -1,4 +1,5 @@
 // Class_ComplexMain.cpp
+// For testing
 #include <iostream>
 #include <iomanip>
 #include "Class_Complex.h"
@@ -8,11 +9,14 @@ int main()
 {
 	Complex c;
     c.SetComplex(3,4);
-    Complex c1,t1,t2;
+    Complex c1,c2,t1,t2;
     c1.SetComplex(4,-1);
-    t1=c+c1;
-    t2=c-c1;
-    t1.Show();
-    t2.Show();
+    c2=c1;
+    c2+=c1;
+    t1=c2;
+    t2=c1+c2;
+    //t1+=c;
+    cout<<t1<<endl;
+    cout<<t2<<endl;
 	return 0;
 }

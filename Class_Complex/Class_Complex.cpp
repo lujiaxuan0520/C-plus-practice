@@ -1,27 +1,32 @@
 // Class_Complex.cpp
 #include "Class_Complex.h"
 
-Complex::Complex(double r,double i)
+Complex::Complex(double r,double i)     //构造函数
 {
     real=r;imag=i;
 }
 
-double Complex:: get_real() const
+Complex::Complex(const Complex& c)      //拷贝构造函数
+{
+    real=c.real;imag=c.imag;
+}
+
+double Complex:: get_real() const   //返回实部
 {
     return real;
 }
 
-double Complex:: get_imag() const
+double Complex:: get_imag() const   //返回虚部
 {
     return imag;
 }
 
-void Complex:: SetComplex(double r,double i)
+void Complex:: SetComplex(double r,double i)    //复数赋值
 {
     real=r;imag=i;
 }
 
-void Complex:: Show() const
+void Complex:: Show() const     //输出复数
 {
     cout<<real;
     if(imag==1) cout<<"+"<<"i"<<endl;
@@ -34,12 +39,12 @@ void Complex:: Show() const
     }
 }
 
-double Complex:: radius() const
+double Complex:: radius() const     //计算模长
 {
     return sqrt(real*real+imag*imag);
 }
 
-Complex operator+(const Complex& a,const Complex &b )
+Complex operator+(const Complex& a,const Complex &b )   //重载+运算符
 {
     Complex temp;
     temp.real=a.real+b.real;
@@ -47,10 +52,30 @@ Complex operator+(const Complex& a,const Complex &b )
     return temp;
 }
 
-Complex operator-(const Complex& a,const Complex &b )
+Complex operator-(const Complex& a,const Complex &b )   //重载-运算符
 {
     Complex temp;
     temp.real=a.real-b.real;
     temp.imag=a.imag-b.imag;
     return temp;
+}
+
+ostream & operator<<(ostream &out,const Complex& c)     //重载<<运算符
+{
+    out<<c.real;
+    if(c.imag==1) out<<"+"<<"i";
+    else if(c.imag==-1) out<<"-i";
+    else
+    {
+        if(c.imag>0) out<<"+"<<c.imag<<"i";
+        else if(c.imag<0) out<<c.imag<<"i";
+
+    }
+    return out;
+}
+
+istream & operator>>(istream &in,Complex &c)        //重载>>运算符
+{
+    in>>c.real>>c.imag;
+    return in;
 }
