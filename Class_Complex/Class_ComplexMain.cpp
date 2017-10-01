@@ -14,9 +14,8 @@ int main()
     c2=c1;
     c2+=c1;
     t1=c2;
-    t2=c1+c2;
-    //t1+=c;
+    t2=t1;
     cout<<t1<<endl;
-    cout<<t2<<endl;
+    cout<<(t1==t2)<<endl;
 	return 0;
 }

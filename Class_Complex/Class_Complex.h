@@ -34,7 +34,11 @@ public:
         this->real-=b.real;this->imag-=b.imag;
         return *this;
     };
-
+    bool operator==(const Complex &b)
+    {
+        if(this->real==b.real&&this->imag==b.imag) return 1;
+        else return 0;
+    }
 
 private:
     double real;
