@@ -19,26 +19,10 @@ public:
     friend Complex operator-(const Complex& a,const Complex &b );
     friend ostream & operator<<(ostream &out,const Complex& c);
     friend istream& operator>>(istream& in, Complex& c);
-    Complex operator=(const Complex &c)
-    {
-        this->real=c.real;this->imag=c.imag;
-        return *this;
-    };
-    Complex operator+=(const Complex &b )
-    {
-        this->real+=b.real;this->imag+=b.imag;
-        return *this;
-    };
-    Complex operator-=(const Complex &b )
-    {
-        this->real-=b.real;this->imag-=b.imag;
-        return *this;
-    };
-    bool operator==(const Complex &b)
-    {
-        if(this->real==b.real&&this->imag==b.imag) return 1;
-        else return 0;
-    }
+    Complex operator=(const Complex &c);
+    Complex operator+=(const Complex &b );
+    Complex operator-=(const Complex &b );
+    bool operator==(const Complex &b);
 
 private:
     double real;

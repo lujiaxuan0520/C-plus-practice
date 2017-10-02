@@ -32,14 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-<Unit filename=".\Class_Complex.cpp" />
-<Unit filename=".\Class_ComplexMain.cpp" />
-<Unit filename=".\Class_Complex.h" />
+		<Unit filename="Class_Complex.cpp" />
+		<Unit filename="Class_Complex.h" />
+		<Unit filename="Class_ComplexMain.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" /> 
+			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

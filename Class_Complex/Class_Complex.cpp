@@ -79,3 +79,27 @@ istream & operator>>(istream &in,Complex &c)        //ÖØÔØ>>ÔËËã·û
     in>>c.real>>c.imag;
     return in;
 }
+
+Complex Complex::operator=(const Complex &c)
+{
+    this->real=c.real;this->imag=c.imag;
+    return *this;
+}
+
+Complex Complex::operator+=(const Complex &b )
+{
+    this->real+=b.real;this->imag+=b.imag;
+    return *this;
+}
+
+Complex Complex::operator-=(const Complex &b )
+{
+    this->real-=b.real;this->imag-=b.imag;
+    return *this;
+}
+
+bool Complex::operator==(const Complex &b)
+{
+    if(this->real==b.real&&this->imag==b.imag) return 1;
+    else return 0;
+}
