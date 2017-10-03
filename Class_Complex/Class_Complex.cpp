@@ -44,7 +44,7 @@ double Complex:: radius() const     //¼ÆËãÄ£³¤
     return sqrt(real*real+imag*imag);
 }
 
-Complex operator+(const Complex& a,const Complex &b )   //ÖØÔØ+ÔËËã·û
+Complex& operator+(const Complex& a,const Complex &b )   //ÖØÔØ+ÔËËã·û
 {
     Complex temp;
     temp.real=a.real+b.real;
@@ -52,7 +52,7 @@ Complex operator+(const Complex& a,const Complex &b )   //ÖØÔØ+ÔËËã·û
     return temp;
 }
 
-Complex operator-(const Complex& a,const Complex &b )   //ÖØÔØ-ÔËËã·û
+Complex& operator-(const Complex& a,const Complex &b )   //ÖØÔØ-ÔËËã·û
 {
     Complex temp;
     temp.real=a.real-b.real;
@@ -80,25 +80,25 @@ istream & operator>>(istream &in,Complex &c)        //ÖØÔØ>>ÔËËã·û
     return in;
 }
 
-Complex Complex::operator=(const Complex &c)
+Complex& Complex::operator=(const Complex &c)       //ÖØÔØ¸³ÖµÔËËã·û
 {
     this->real=c.real;this->imag=c.imag;
     return *this;
 }
 
-Complex Complex::operator+=(const Complex &b )
+Complex& Complex::operator+=(const Complex &b )     //ÖØÔØ+=ÔËËã·û
 {
     this->real+=b.real;this->imag+=b.imag;
     return *this;
 }
 
-Complex Complex::operator-=(const Complex &b )
+Complex& Complex::operator-=(const Complex &b )     //ÖØÔØ-=ÔËËã·û
 {
     this->real-=b.real;this->imag-=b.imag;
     return *this;
 }
 
-bool Complex::operator==(const Complex &b)
+bool Complex::operator==(const Complex &b)          //ÖØÔØ==ÔËËã·û
 {
     if(this->real==b.real&&this->imag==b.imag) return 1;
     else return 0;

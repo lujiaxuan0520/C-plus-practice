@@ -15,13 +15,13 @@ public:
     void SetComplex(double r,double i);
     void Show() const;
     double radius() const;
-    friend Complex operator+(const Complex& a,const Complex &b );
-    friend Complex operator-(const Complex& a,const Complex &b );
-    friend ostream & operator<<(ostream &out,const Complex& c);
+    friend Complex& operator+(const Complex& a,const Complex &b );
+    friend Complex& operator-(const Complex& a,const Complex &b );
+    friend ostream& operator<<(ostream &out,const Complex& c);
     friend istream& operator>>(istream& in, Complex& c);
-    Complex operator=(const Complex &c);
-    Complex operator+=(const Complex &b );
-    Complex operator-=(const Complex &b );
+    Complex& operator=(const Complex &c);
+    Complex& operator+=(const Complex &b );
+    Complex& operator-=(const Complex &b );
     bool operator==(const Complex &b);
 
 private:
