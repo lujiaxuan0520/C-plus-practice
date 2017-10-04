@@ -21,7 +21,7 @@ public:
     String& operator+(const String& s) const;   //重载加法运算符，实现s1+s2
     String& operator+(const char& c) const;     //重载加法运算符，实现s+'a'
     String& operator+=(const String& s);        //重载+=运算符，实现s1+=s2
-    String& operator+=(const char& c);
+    String& operator+=(const char& c);          //重载+=运算符，实现s1+='a'
     bool operator==(const String &s) const;     //重载==运算符，实现s1==s2
     bool operator!=(const String &s) const;     //重载!=运算符，实现s1!=s2
     bool operator<(const String& s) const;      //重载<运算符，实现s1<s2
