@@ -98,9 +98,22 @@ String& String::operator=(const String& s)
 
 String& String::operator+(const String& s) const
 {
-    String temp(*this);
+//    String temp(*this);
+//    temp.num=this->num+s.num;
+//    for(unsigned i=this->num;i<temp.num;++i)
+//    {
+//        temp[i]=s[i-this->num];
+//    }
+//    return temp;
+    String temp;
+    temp.pc=new char[this->num+s.num];
     temp.num=this->num+s.num;
-    for(unsigned i=this->num;i<temp.num;++i)
+    unsigned i;
+    for(i=0;i<this->num;++i)
+    {
+        temp[i]=(*this)[i];
+    }
+    for(;i<this->num+s.num;++i)
     {
         temp[i]=s[i-this->num];
     }

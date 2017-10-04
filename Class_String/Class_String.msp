@@ -87,6 +87,6 @@ extraResourceOptions=
 [Resource]
 [Other]
 [History]
-Class_String.h,139
 Class_StringMain.cpp,115
-Class_String.cpp,3439
+Class_String.h,132
+Class_String.cpp,3498
