@@ -1,6 +1,5 @@
 // Class_String.cpp
 #include "Class_String.h"
-#include<iostream>
 #include<cstdlib>
 
 //以下为构造函数定义
@@ -53,12 +52,31 @@ String::String(const String &s)
     }
 }
 
+//以下为普通成员函数
+int String::length() const
+{
+    return num;
+}
+
+bool String::Empty() const
+{
+    if(num==0) return 1;
+    else return 0;
+}
+
+String& String::Erase()
+{
+    delete pc;
+    num=0;
+    pc=nullptr;
+}
+
 //以下为重载运算符
 char& String::operator[](unsigned index) const
 {
     if(index>=num)
     {
-        std::cerr<<"index too large";
+        cerr<<"Index too large";
         exit(-1);
     }
     else
@@ -87,6 +105,26 @@ String& String::operator+(const String& s) const
         temp[i]=s[i-this->num];
     }
     return temp;
+}
+
+String& String::operator+(const char& c) const
+{
+    String t(1,c);
+    String temp(*this);
+    temp=temp+t;
+    return temp;
+}
+
+String& String::operator+=(const String& s)
+{
+    *this=*this+s;
+    return *this;
+}
+
+String& String::operator+=(const char& c)
+{
+    *this=*this+c;
+    return *this;
 }
 
 bool String::operator==(const String &s) const
