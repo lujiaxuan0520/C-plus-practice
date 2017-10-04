@@ -6,7 +6,7 @@
 String::String()
 {
     num=0;
-    pc=nullptr;
+    pc=NULL;
 }
 
 String::String(const char* chr)
@@ -14,7 +14,7 @@ String::String(const char* chr)
     if(!chr)
     {
         num=0;
-        pc=nullptr;
+        pc=NULL;
     }
     else
     {
@@ -207,18 +207,19 @@ ostream& operator<<(ostream& out,const String& s)
 
 istream& operator>>(istream& in,String& s)//ÓÐÎÊÌâ£¡
 {
-    s.num=0;
-    s.pc=new char[1024];
-    char c,*p=s.pc;
-    while(in>>c)
-    {
-        if(c!=' '&&c!='\n')
-        {
-            s.num++;
-            *p=c;
-            p++;
-        }
-        else break;
-    }
+//    s.num=0;
+//    s.pc=new char[1024];
+//    char c,*p=s.pc;
+//    while(in>>c)
+//    {
+//        if(c!=' '&&c!='\n')
+//        {
+//            s.num++;
+//            *p=c;
+//            p++;
+//        }
+//        else break;
+//    }
+    in>>s.pc;
     return in;
 }
