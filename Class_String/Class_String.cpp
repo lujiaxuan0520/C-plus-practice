@@ -1,7 +1,7 @@
 // Class_String.cpp
 #include "Class_String.h"
 #include<cstdlib>
-
+#include<cstring>
 //以下为构造函数定义
 String::String()
 {
@@ -96,15 +96,8 @@ String& String::operator=(const String& s)
     return *this;
 }
 
-String& String::operator+(const String& s) const
+String String::operator+(const String& s) const
 {
-//    String temp(*this);
-//    temp.num=this->num+s.num;
-//    for(unsigned i=this->num;i<temp.num;++i)
-//    {
-//        temp[i]=s[i-this->num];
-//    }
-//    return temp;
     String temp;
     temp.pc=new char[this->num+s.num];
     temp.num=this->num+s.num;
@@ -120,7 +113,7 @@ String& String::operator+(const String& s) const
     return temp;
 }
 
-String& String::operator+(const char& c) const
+String String::operator+(const char& c) const
 {
     String t(1,c);
     String temp(*this);
@@ -218,21 +211,16 @@ ostream& operator<<(ostream& out,const String& s)
     return out;
 }
 
-istream& operator>>(istream& in,String& s)//有问题！
+istream& operator>>(istream& in,String& s)
 {
-//    s.num=0;
-//    s.pc=new char[1024];
-//    char c,*p=s.pc;
-//    while(in>>c)
-//    {
-//        if(c!=' '&&c!='\n')
-//        {
-//            s.num++;
-//            *p=c;
-//            p++;
-//        }
-//        else break;
-//    }
     in>>s.pc;
+    char *it=s.pc;
+    unsigned _count=0;
+    while(*it!='\0')
+    {
+        _count++;
+        it++;
+    }
+    s.num=_count;
     return in;
 }

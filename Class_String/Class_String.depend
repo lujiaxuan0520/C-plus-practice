@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1507125547 source:e:\ctemp\project\c++ practice\class_string\class_stringmain.cpp
+1507127351 source:e:\ctemp\project\c++ practice\class_string\class_stringmain.cpp
 	<iostream>
 	<iomanip>
 	"Class_String.h"
 
-1507114356 e:\ctemp\project\c++ practice\class_string\class_string.h
+1507190916 e:\ctemp\project\c++ practice\class_string\class_string.h
 	<iostream>
 
-1507125571 source:e:\ctemp\project\c++ practice\class_string\class_string.cpp
+1507190916 source:e:\ctemp\project\c++ practice\class_string\class_string.cpp
 	"Class_String.h"
 	<cstdlib>
+	<cstring>
 

@@ -8,11 +8,11 @@ int main()
 {
 	String s("ed");
 	String s1="vf";
-	s+=s1;
+	//s=s+s1;
 	//cin>>s;
 	//cout<<s<<endl<<s1<<endl;
 	//s=s+s1;
 	//cout<<s[0]<<s[1]<<s[2]<<s[3]<<s[4];
-	cout<<s;
+	cout<<(s+='a');
 
 }

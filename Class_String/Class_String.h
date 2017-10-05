@@ -18,8 +18,8 @@ public:
     //运算符重载
     char& operator[](unsigned index) const;     //重载[]运算符，实现s[i]下标访问
     String& operator=(const String& s);         //重载赋值运算符，实现s1=s2;深赋值
-    String& operator+(const String& s) const;   //重载加法运算符，实现s1+s2
-    String& operator+(const char& c) const;     //重载加法运算符，实现s+'a'
+    String operator+(const String& s) const;   //重载加法运算符，实现s1+s2
+    String operator+(const char& c) const;     //重载加法运算符，实现s+'a'
     String& operator+=(const String& s);        //重载+=运算符，实现s1+=s2
     String& operator+=(const char& c);          //重载+=运算符，实现s1+='a'
     bool operator==(const String &s) const;     //重载==运算符，实现s1==s2
@@ -28,8 +28,9 @@ public:
     bool operator>(const String& s) const;      //重载>运算符，实现s1>s2
     bool operator<=(const String& s) const;     //重载<=运算符，实现s1<=s2
     bool operator>=(const String& s) const;     //重载>=运算符，实现s1>=s2
-    friend ostream& operator<<(ostream& out,const String& s);  //重载<<运算符
-    friend istream& operator>>(istream& in,String& s);//待设计！还可以加一个getline
+    friend ostream& operator<<(ostream& out,const String& s);   //重载<<运算符
+    friend istream& operator>>(istream& in,String& s);          //重载>>运算符
+    //待添加getline函数
 
 private:
     char *pc;
