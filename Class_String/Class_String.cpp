@@ -1,8 +1,7 @@
 // Class_String.cpp
 #include "Class_String.h"
 #include<cstdlib>
-#include<cstring>
-//以下为构造函数定义
+//以下为构造函数
 String::String()
 {
     num=0;
@@ -32,13 +31,21 @@ String::String(const char* chr)
     }
 }
 
-String::String(unsigned n,const char c)
+String::String(int n,const char c)
 {
-    num=n;
-    pc=new char[num];
-    for(unsigned i=0;i<num;++i)
+    if(n<0)
     {
-        pc[i]=c;
+        cerr<<"The first argument should be greater than zero.";
+        exit(-1);
+    }
+    else
+    {
+        num=n;
+        pc=new char[num];
+        for(unsigned i=0;i<num;++i)
+        {
+            pc[i]=c;
+        }
     }
 }
 
@@ -52,23 +59,45 @@ String::String(const String &s)
     }
 }
 
+//以下为析构函数
+String::~String()
+{
+    if(pc!=NULL)
+    {
+        delete [] pc;
+        num=0;
+        pc=NULL;
+    }
+}
+
 //以下为普通成员函数
 int String::length() const
 {
     return num;
 }
 
-bool String::Empty() const
+bool String::empty() const
 {
     if(num==0) return 1;
     else return 0;
 }
 
-String& String::Erase()
+String& String::erase()
 {
-    delete pc;
-    num=0;
-    pc=nullptr;
+    if(pc!=NULL)
+    {
+        delete [] pc;
+        num=0;
+        pc=NULL;
+    }
+}
+
+String& String::swap(String &s)
+{
+	String temp = s;
+	s=*this;
+	*this=temp;
+	return *this;
 }
 
 //以下为重载运算符
@@ -223,4 +252,22 @@ istream& operator>>(istream& in,String& s)
     }
     s.num=_count;
     return in;
+}
+
+//getline函数
+istream& String::getline(istream& in,String& s,int num)
+{
+    if(num<0)
+    {
+        cerr<<"The third argument should be greater than zero.";
+        exit(-1);
+    }
+    else
+    {
+        if(s.pc!=NULL) delete [] s.pc;
+        s.pc=new char[num+1];
+        in.getline(s.pc,num+1,'\n');
+        s.num=num;
+        return in;
+    }
 }

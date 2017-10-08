@@ -1,5 +1,5 @@
 [Project]
-name=Class_String
+name=Class_String_c-type
 type=0
 defaultConfig=0
 
@@ -26,7 +26,7 @@ optimizeLevel=0
 
 // linker
 libraryPath=
-outputFilename=Debug\Class_String.exe
+outputFilename=Debug\Class_String_c-type.exe
 libraries=
 extraLinkerOptions=
 ignoreStartupFile=0
@@ -64,7 +64,7 @@ optimizeLevel=2
 
 // linker
 libraryPath=
-outputFilename=Release\Class_String.exe
+outputFilename=Release\Class_String_c-type.exe
 libraries=
 extraLinkerOptions=
 ignoreStartupFile=0
@@ -80,13 +80,13 @@ resourceIncludeDirectory=
 extraResourceOptions=
 
 [Source]
-1=.\Class_String.cpp
-2=.\Class_StringMain.cpp
+1=.\main.cpp
+2=.\String.cpp
 [Header]
-1=.\Class_String.h
+1=.\String.h
 [Resource]
 [Other]
 [History]
-Class_String.h,132
-Class_StringMain.cpp,115
-Class_String.cpp,3466
+.\main.cpp, 0
+.\String.cpp, 0
+.\String.h, 0
