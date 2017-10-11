@@ -2,12 +2,6 @@
 #include "Class_String.h"
 #include<cstdlib>
 //以下为构造函数
-String::String()
-{
-    num=0;
-    pc=NULL;
-}
-
 String::String(const char* chr)
 {
     if(!chr)
@@ -17,45 +11,76 @@ String::String(const char* chr)
     }
     else
     {
-        unsigned i=0,_count=0;
+        int i=0,_count=0;
         while(chr[i])
         {
             _count++;i++;
         }
         num=_count;
         pc=new char[num];
-        for(i=0;i<num;++i)
+        if(pc==NULL)
         {
-            pc[i]=chr[i];
+            num=0;pc=NULL;
+            return;
+        }
+        else
+        {
+            for(i=0;i<num;++i)
+            {
+                pc[i]=chr[i];
+            }
         }
     }
 }
 
-String::String(int n,const char c)
+String::String(int n,const char &c) throw(char)
 {
     if(n<0)
     {
-        cerr<<"The first argument should be greater than zero.";
-        exit(-1);
+        throw (char)0;
     }
     else
     {
         num=n;
         pc=new char[num];
-        for(unsigned i=0;i<num;++i)
+        if(pc==NULL)
         {
-            pc[i]=c;
+            num=0;
+            return;
+        }
+        else
+        {
+            for(int i=0;i<num;++i)
+            {
+                pc[i]=c;
+            }
         }
     }
 }
 
 String::String(const String &s)
 {
-    num=s.num;
-    pc=new char[num];
-    for(unsigned i=0;i<num;++i)
+    if(s.num==0)
     {
-        pc[i]=s[i];
+        num=0;pc=NULL;
+        return;
+    }
+    else
+    {
+        num=s.num;
+        pc=new char[num];
+        if(pc==NULL)
+        {
+            num=0;pc=NULL;
+            return;
+        }
+        else
+        {
+            for(int i=0;i<num;++i)
+            {
+                pc[i]=s[i];
+            }
+        }
     }
 }
 
@@ -90,6 +115,7 @@ String& String::erase()
         num=0;
         pc=NULL;
     }
+    return *this;
 }
 
 String& String::swap(String &s)
@@ -101,12 +127,11 @@ String& String::swap(String &s)
 }
 
 //以下为重载运算符
-char& String::operator[](unsigned index) const
+char& String::operator[](int index) const throw(double)
 {
     if(index>=num)
     {
-        cerr<<"Index too large";
-        exit(-1);
+        throw (double)0;
     }
     else
     {
@@ -116,11 +141,15 @@ char& String::operator[](unsigned index) const
 
 String& String::operator=(const String& s)
 {
-    num=s.num;
-    pc=new char[num];
-    for(unsigned i=0;i<num;++i)
+    if(&s!=this)
     {
-        pc[i]=s[i];
+        if(pc!=NULL) delete [] pc;
+        num=s.num;
+        pc=new char[num];
+        for(int i=0;i<num;++i)
+        {
+            pc[i]=s[i];
+        }
     }
     return *this;
 }
@@ -130,7 +159,7 @@ String String::operator+(const String& s) const
     String temp;
     temp.pc=new char[this->num+s.num];
     temp.num=this->num+s.num;
-    unsigned i;
+    int i;
     for(i=0;i<this->num;++i)
     {
         temp[i]=(*this)[i];
@@ -166,7 +195,7 @@ bool String::operator==(const String &s) const
 {
     if(this->num==s.num)
     {
-        unsigned i;
+        int i;
         for(i=0;i<s.num;++i)
         {
             if((*this)[i]!=s[i]) break;
@@ -190,8 +219,8 @@ bool String::operator<(const String& s) const
     else if(this->num!=0&&s.num==0) return 0;
     else
     {
-        unsigned _min=(this->num>s.num)?s.num:this->num;
-        unsigned i;
+        int _min=(this->num>s.num)?s.num:this->num;
+        int i;
         for(i=0;i<_min;++i)
         {
             if((*this)[i]>s[i]) break;
@@ -208,8 +237,8 @@ bool String::operator>(const String& s) const
     else if(this->num!=0&&s.num==0) return 1;
     else
     {
-        unsigned _min=(this->num>s.num)?s.num:this->num;
-        unsigned i;
+        int _min=(this->num>s.num)?s.num:this->num;
+        int i;
         for(i=0;i<_min;++i)
         {
             if((*this)[i]<s[i]) break;
@@ -233,7 +262,7 @@ bool String::operator>=(const String& s) const
 
 ostream& operator<<(ostream& out,const String& s)
 {
-    for(unsigned i=0;i<s.num;++i)
+    for(int i=0;i<s.num;++i)
     {
         out<<s[i];
     }
@@ -244,7 +273,7 @@ istream& operator>>(istream& in,String& s)
 {
     in>>s.pc;
     char *it=s.pc;
-    unsigned _count=0;
+    int _count=0;
     while(*it!='\0')
     {
         _count++;
@@ -254,20 +283,3 @@ istream& operator>>(istream& in,String& s)
     return in;
 }
 
-//getline函数
-istream& String::getline(istream& in,String& s,int num)
-{
-    if(num<0)
-    {
-        cerr<<"The third argument should be greater than zero.";
-        exit(-1);
-    }
-    else
-    {
-        if(s.pc!=NULL) delete [] s.pc;
-        s.pc=new char[num+1];
-        in.getline(s.pc,num+1,'\n');
-        s.num=num;
-        return in;
-    }
-}
