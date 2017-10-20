@@ -31,7 +31,6 @@ protected:
 };
 template <typename T> Base<T>::Base(int size, const T *x)
 {
-	cout<<"B";
 	if(size<=0)						// 如果第一个实参为0，或负数，则构造一个0维向量
 	{
 		num = 0; p = NULL;

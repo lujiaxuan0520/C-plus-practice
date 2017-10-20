@@ -16,3 +16,20 @@
 	<cstring>
 	"Base.h"
 
+1508465323 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
+	<iostream>
+	"Base.h"
+	"Vector.h"
+	"String.h"
+
+1508464694 e:\ctemp\project\c++ practice\class_vands\base.h
+	<iostream>
+
+1508464704 e:\ctemp\project\c++ practice\class_vands\vector.h
+	"Base.h"
+
+1508465917 e:\ctemp\project\c++ practice\class_vands\string.h
+	<iostream>
+	<cstring>
+	"Base.h"
+

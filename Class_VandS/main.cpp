@@ -6,12 +6,12 @@ using namespace std;
 
 int main()
 {
-    int b[3]={1,2,3};
-    Vector<int> a(3,b);
+//    int b[3]={1,2,3};
+//    Vector<int> a(3,b);
+//
+//    Vector<int> c=a ;
+    char ch[5]="absd";
+    String chr(3,ch);
 
-    Vector<int> c=a ;
-//    char ch[5]="absd";
-//    String chr(3,ch);
-//    cout<<chr;
     return 0;
 }
