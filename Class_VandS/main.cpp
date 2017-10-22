@@ -6,12 +6,15 @@ using namespace std;
 
 int main()
 {
-//    int b[3]={1,2,3};
-//    Vector<int> a(3,b);
-//
-//    Vector<int> c=a ;
-    char ch[5]="absd";
-    String chr(3,ch);
+    double b[3]={1,2,3};
+    double c[3]={2.4,4.1,6};
+    Vector<double> a(3,b);
+    Vector<double> d(3,c);
 
+    cout<<a.dot(d);
+//
+//    String a(3,'b');
+//
+//    cout<<a.empty();
     return 0;
 }

@@ -6,19 +6,31 @@
 class String:public Base<char>
 {
 public:
-    String(int size=0,const char *x=NULL);
-    String(const char *str=""):Base<char>(strlen(str),str){}
+    String(int size=0,const char *x=NULL):Base<char>(size,x){}
+    String(const char *str):Base<char>(strlen(str),str){}
+    String(int n,const char &c) throw (double);//n不能小于0
     String(const String &v):Base<char>(v){}
+    ~String();
     bool operator>(const String &v) const;
     bool operator<(const String &v) const;
     bool operator>=(const String &v) const;
     bool operator<=(const String &v) const;
-    friend ostream & operator<<(ostream &out, const String &s);
-    friend istream & operator>>(istream &in, String &s);
+    String operator+(const String &s) const;
+    String operator+(const char &c) const;
+    String & operator+=(const char &c);
+    String & operator+=(const String &s);
+    void Input();
     void Output()const;
 };
-String::String(int size,const char *x):Base<char>(size,x)
+
+String::~String()
 {
+    if(this->p!=NULL)
+    {
+        delete [] this->p;
+        this->num=0;
+        this->p=NULL;
+    }
 }
 bool String::operator<(const String& s) const
 {
@@ -53,20 +65,14 @@ bool String::operator>=(const String& s) const
     if(*this>s||*this==s) return 1;
     else return 0;
 }
-ostream & operator<<(ostream &out, const String &s)
-{
-    out<<s.p;
-    return out;
-}
-istream & operator>>(istream &in, String &s)
+void String::Input()
 {
     char *str;
     int n=0;
-    if(in.peek()!='\n') n++;
+    if(cin.peek()!='\n') n++;
     str=new char[n];
-    in>>str;
-    s=str;
-    return in;
+    cin>>str;
+    *this=str;
 }
 void String::Output() const
 {
@@ -79,5 +85,51 @@ void String::Output() const
                 cout << this->p[i];
             }
 	}
+}
+String String::operator+(const String &s) const
+{
+    String temp;
+    temp.p=new char[this->num+s.num];
+    temp.num=this->num+s.num;
+    int i;
+    for(i=0;i<this->num;++i)
+    {
+        temp.p[i]=this->p[i];
+    }
+    for(;i<this->num+s.num;++i)
+    {
+        temp.p[i]=s.p[i-this->num];
+    }
+    return temp;
+}
+String & String::operator+=(const String &s)
+{
+    *this=*this+s;
+    return *this;
+}
+String::String(int n,const char &c) throw (double)
+{
+    if(n<0)
+    {
+        throw 0;
+    }
+    this->num=n;
+    this->p=new char[this->num];
+    for(int i=0;i<this->num;++i)
+    {
+        this->p[i]=c;
+    }
+}
+String String::operator+(const char &c) const
+{
+    String t(1,c);
+    String temp(*this);
+    temp=temp+t;
+    return temp;
+}
+String & String::operator+=(const char& c)
+{
+    *this=*this+c;
+    return *this;
 }
 #endif // STRING_H

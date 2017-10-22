@@ -16,19 +16,53 @@
 	<cstring>
 	"Base.h"
 
-1508465323 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
+1508635403 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
 	<iostream>
 	"Base.h"
 	"Vector.h"
 	"String.h"
 
-1508464694 e:\ctemp\project\c++ practice\class_vands\base.h
+1508639350 e:\ctemp\project\c++ practice\class_vands\base.h
 	<iostream>
 
-1508464704 e:\ctemp\project\c++ practice\class_vands\vector.h
+1508639409 e:\ctemp\project\c++ practice\class_vands\vector.h
 	"Base.h"
 
-1508465917 e:\ctemp\project\c++ practice\class_vands\string.h
+1508635403 e:\ctemp\project\c++ practice\class_vands\string.h
+	<iostream>
+	<cstring>
+	"Base.h"
+
+1508510287 source:c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\main.cpp
+	<iostream>
+	"Base.h"
+	"Vector.h"
+	"String.h"
+
+1508472409 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\base.h
+	<iostream>
+
+1508471624 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\vector.h
+	"Base.h"
+
+1508472409 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\string.h
+	<iostream>
+	<cstring>
+	"Base.h"
+
+1508635289 source:c:\users\lenovo\desktop\class_vands v1.0\class_vands\main.cpp
+	<iostream>
+	"Base.h"
+	"Vector.h"
+	"String.h"
+
+1508472409 c:\users\lenovo\desktop\class_vands v1.0\class_vands\base.h
+	<iostream>
+
+1508635262 c:\users\lenovo\desktop\class_vands v1.0\class_vands\vector.h
+	"Base.h"
+
+1508635373 c:\users\lenovo\desktop\class_vands v1.0\class_vands\string.h
 	<iostream>
 	<cstring>
 	"Base.h"
