@@ -10,8 +10,8 @@ int main()
     double c[3]={2.4,4.1,6};
     Vector<double> a(3,b);
     Vector<double> d(3,c);
-
-    cout<<a.dot(d);
+    a.resize(5);
+    cout<<a;
 //
 //    String a(3,'b');
 //

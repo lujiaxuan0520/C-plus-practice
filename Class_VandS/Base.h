@@ -19,8 +19,8 @@ public:
 	bool operator==(const Base<T> &v) const;
 	bool operator!=(const Base<T> &v) const;
 
-	virtual void Input() =0;
-    virtual void Output() const = 0;
+	virtual void Input() =0;                    //输入函数，向量与字符串处理方式不同
+    virtual void Output() const = 0;            //输出函数，向量与字符串处理方式不同
     template <typename TYPE> friend ostream & operator<<(ostream &out,const Base<T> &B);
 	template <typename TYPE> friend istream & operator>>(istream &in,Base<T> &B);
 protected:
@@ -77,23 +77,24 @@ template <typename T> Base<T> & Base<T>::operator=(const Base<T> &v)
 	return *this;
 }
 
-template <typename T> T & Base<T>::operator[](int index) const throw(char)
-{		// 由于本函数需要引用返回 T 类型的变量，当下标越界时，无论返回什么都是不妥的，简单粗暴地exit(-1)也不妥。
-	if(index<0 || index>=num)		// 如果下标越界
-		throw '\0';					// 抛掷字符型异常（按约定“说明情况”，然后交由上级部门，即调用本函数处另行处理。这是一种卓越的流程控制方法）
-	return p[index];				// 引用返回第index个分量，使之可为左值
-}
-
-
 template <typename T> int Base<T>::size() const
 {
 	return num;
 }
+
 template <typename T> bool Base<T>::empty() const
 {
-    if(num==0) return 1;
-    else return 0;
+    if(num==0) return true;
+    else return false;
 }
+
+template <typename T> T & Base<T>::operator[](int index) const throw(char)
+{
+	if(index<0 || index>=num)
+		throw '\0';
+	return p[index];
+}
+
 template <typename T> bool Base<T>::operator==(const Base<T> &v) const
 {
 	int i;
@@ -106,10 +107,12 @@ template <typename T> bool Base<T>::operator==(const Base<T> &v) const
 	}
 	return false;
 }
+
 template <typename T> bool Base<T>::operator!=(const Base<T> &v) const
 {
 	return !(*this == v);
 }
+
 template <typename T> ostream & operator<<(ostream &out,const Base<T> &B)
 {
     B.Output();
