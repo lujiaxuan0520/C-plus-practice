@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1507979193 source:e:\ctemp\project\c++ practice\class_string\class_stringmain.cpp
+1507996988 source:e:\ctemp\project\c++ practice\class_string\class_stringmain.cpp
 	<iostream>
 	<iomanip>
 	"Class_String.h"

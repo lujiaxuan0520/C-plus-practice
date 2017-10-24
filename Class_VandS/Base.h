@@ -1,6 +1,8 @@
 #ifndef BASE_H
 #define BASE_H
 #include <iostream>
+//#include"Vector.h"
+//#include"String.h"
 using namespace std;
 
 template <typename T>
@@ -19,15 +21,27 @@ public:
 	bool operator==(const Base<T> &v) const;
 	bool operator!=(const Base<T> &v) const;
 
-	virtual void Input() =0;                    //输入函数，向量与字符串处理方式不同
-    virtual void Output() const = 0;            //输出函数，向量与字符串处理方式不同
-    template <typename TYPE> friend ostream & operator<<(ostream &out,const Base<T> &B);
-	template <typename TYPE> friend istream & operator>>(istream &in,Base<T> &B);
+	virtual void Input(istream& in) =0;         //输入函数，向量与字符串处理方式不同
+    virtual void Output(ostream& out) const = 0;//输出函数，向量与字符串处理方式不同
+
 protected:
 	int num;						// 维数
 	T *p;							// 指向对象的资源空间的首地址
 };
+//输出运算符重载，不再是类的成员函数。由之调用Output函数分别实现Vector和String的输出
+template <typename T> ostream & operator<<(ostream &out,const Base<T> &B)
+{
+    B.Output(cout);
+    return out;
+}
+//输入运算符重载，不再是类的成员函数。由之调用Input函数分别实现Vector和String的输入
+template <typename T> istream & operator>>(istream &in, Base<T> &B)
+{
+    B.Input(cin);
+    return in;
+}
 
+//Base类成员函数的具体实现
 template <typename T> Base<T>::Base(int size, const T *x)
 {
 	if(size<=0)
@@ -111,17 +125,6 @@ template <typename T> bool Base<T>::operator==(const Base<T> &v) const
 template <typename T> bool Base<T>::operator!=(const Base<T> &v) const
 {
 	return !(*this == v);
-}
-
-template <typename T> ostream & operator<<(ostream &out,const Base<T> &B)
-{
-    B.Output();
-    return out;
-}
-template <typename T> istream & operator>>(istream &in, Base<T> &B)
-{
-    B.Input();
-    return in;
 }
 
 #endif // Base_H

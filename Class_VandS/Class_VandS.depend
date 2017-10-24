@@ -1,69 +1,37 @@
 # depslib dependency file v1.0
-1508459751 source:d:\document and settings2\administrator\desktop\temporary documents\研讨\class_vands\main.cpp
+1508736119 source:e:\ctemp\project\class_vands\main.cpp
 	<iostream>
-	"Base.h"
+	<fstream>
 	"Vector.h"
 	"String.h"
 
-1508459590 d:\document and settings2\administrator\desktop\temporary documents\研讨\class_vands\base.h
+1508730386 e:\ctemp\project\class_vands\vector.h
+	"Base.h"
+	<cmath>
+
+1508729328 e:\ctemp\project\class_vands\base.h
 	<iostream>
 
-1508425213 d:\document and settings2\administrator\desktop\temporary documents\研讨\class_vands\vector.h
-	"Base.h"
-
-1508460305 d:\document and settings2\administrator\desktop\temporary documents\研讨\class_vands\string.h
+1508729938 e:\ctemp\project\class_vands\string.h
 	<iostream>
 	<cstring>
 	"Base.h"
 
-1508645513 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
+1508845913 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
 	<iostream>
+	<fstream>
 	"Base.h"
 	"Vector.h"
 	"String.h"
 
-1508645684 e:\ctemp\project\c++ practice\class_vands\base.h
+1508845774 e:\ctemp\project\c++ practice\class_vands\vector.h
+	"Base.h"
+	<cmath>
+
+1508845913 e:\ctemp\project\c++ practice\class_vands\base.h
 	<iostream>
 
-1508646133 e:\ctemp\project\c++ practice\class_vands\vector.h
-	"Base.h"
-
-1508646097 e:\ctemp\project\c++ practice\class_vands\string.h
-	<iostream>
-	<cstring>
-	"Base.h"
-
-1508510287 source:c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\main.cpp
-	<iostream>
-	"Base.h"
-	"Vector.h"
-	"String.h"
-
-1508472409 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\base.h
-	<iostream>
-
-1508471624 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\vector.h
-	"Base.h"
-
-1508472409 c:\users\lenovo\desktop\class_vands v1.0 (1)\class_vands\string.h
+1508845768 e:\ctemp\project\c++ practice\class_vands\string.h
 	<iostream>
 	<cstring>
-	"Base.h"
-
-1508635289 source:c:\users\lenovo\desktop\class_vands v1.0\class_vands\main.cpp
-	<iostream>
-	"Base.h"
-	"Vector.h"
-	"String.h"
-
-1508472409 c:\users\lenovo\desktop\class_vands v1.0\class_vands\base.h
-	<iostream>
-
-1508635262 c:\users\lenovo\desktop\class_vands v1.0\class_vands\vector.h
-	"Base.h"
-
-1508635373 c:\users\lenovo\desktop\class_vands v1.0\class_vands\string.h
-	<iostream>
-	<cstring>
-	"Base.h"
 
