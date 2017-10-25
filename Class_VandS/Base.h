@@ -1,8 +1,6 @@
 #ifndef BASE_H
 #define BASE_H
 #include <iostream>
-//#include"Vector.h"
-//#include"String.h"
 using namespace std;
 
 template <typename T>
@@ -13,17 +11,14 @@ public:
 	Base(const Base<T> &v);                     //拷贝构造函数
     virtual ~Base();                            //虚析构函数
     Base & operator=(const Base<T> &v);         //深赋值运算符重载
-
 	int size() const;							//获取维数
     bool empty() const;                         //判断是否为空
-
 	T & operator[](int index) const throw(char);//方括号运算符，当下标越界时抛掷异常
 	bool operator==(const Base<T> &v) const;
 	bool operator!=(const Base<T> &v) const;
-
 	virtual void Input(istream& in) =0;         //输入函数，向量与字符串处理方式不同
     virtual void Output(ostream& out) const = 0;//输出函数，向量与字符串处理方式不同
-
+    virtual void f(){cout<<"Base::f()"<<endl;}
 protected:
 	int num;						// 维数
 	T *p;							// 指向对象的资源空间的首地址

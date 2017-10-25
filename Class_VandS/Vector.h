@@ -7,6 +7,7 @@ class Vector:public Base<T>
 {
 public:
     Vector(int size=0,const T *x=NULL):Base<T>(size,x){}
+    Vector (const Vector<T> &v):Base<T>(v){}
     Vector operator+(const Vector<T> &v) const throw(double);//向量相加，与字符串的处理方法不同
     Vector & operator+=(const Vector<T> &v);
     Vector operator*(int n) const;                           //向量数乘
@@ -18,6 +19,7 @@ public:
     Vector & resize(int size);
     void Input(istream& in);
     void Output(ostream& out)const;
+    void f(){cout<<"Vector::f()"<<endl;}
 };
 
 template <typename T> Vector<T> Vector<T>::operator+(const Vector<T> &v) const throw(double)
