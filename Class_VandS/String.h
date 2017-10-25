@@ -2,14 +2,13 @@
 #define STRING_H
 #include <iostream>
 #include <cstring>
-//#include "Base.h"
+#include "Base.h"
 class String:public Base<char>
 {
 public:
     String(int size=0,const char *x=NULL):Base<char>(size,x){}
     String(const char *str):Base<char>(strlen(str),str){}
     String(int n,const char &c);
-    String(const String &v):Base<char>(v){}
     bool operator<(const String &v) const;
     bool operator>(const String &v) const;
     bool operator<=(const String &v) const;

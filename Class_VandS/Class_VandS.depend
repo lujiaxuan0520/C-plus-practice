@@ -17,21 +17,22 @@
 	<cstring>
 	"Base.h"
 
-1508845913 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
+1508891060 source:e:\ctemp\project\c++ practice\class_vands\main.cpp
 	<iostream>
 	<fstream>
 	"Base.h"
 	"Vector.h"
 	"String.h"
 
-1508845774 e:\ctemp\project\c++ practice\class_vands\vector.h
+1508894991 e:\ctemp\project\c++ practice\class_vands\vector.h
 	"Base.h"
 	<cmath>
 
-1508845913 e:\ctemp\project\c++ practice\class_vands\base.h
+1508890886 e:\ctemp\project\c++ practice\class_vands\base.h
 	<iostream>
 
-1508845768 e:\ctemp\project\c++ practice\class_vands\string.h
+1508894991 e:\ctemp\project\c++ practice\class_vands\string.h
 	<iostream>
 	<cstring>
+	"Base.h"
 

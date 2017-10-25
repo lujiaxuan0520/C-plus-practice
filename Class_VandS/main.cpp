@@ -27,7 +27,7 @@ void test(Vector<T> &v0, Vector<T> &v1, Vector<T> &v2, Vector<T> &x)
     }
     catch(double)                                  // 捕捉异常，并处理
     {
-        cout << "向量维数不同，无法相加。" << endl;
+        cout << "向量维数不同，无法操作。" << endl;
     }
 
     do                                          // 向量输入测试

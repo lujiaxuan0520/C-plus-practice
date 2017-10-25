@@ -31,13 +31,13 @@ protected:
 //输出运算符重载，不再是类的成员函数。由之调用Output函数分别实现Vector和String的输出
 template <typename T> ostream & operator<<(ostream &out,const Base<T> &B)
 {
-    B.Output(cout);
+    B.Output(out);
     return out;
 }
 //输入运算符重载，不再是类的成员函数。由之调用Input函数分别实现Vector和String的输入
 template <typename T> istream & operator>>(istream &in, Base<T> &B)
 {
-    B.Input(cin);
+    B.Input(in);
     return in;
 }
 
