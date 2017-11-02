@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1509371050 source:c:\users\administrator\desktop\ecard\ecard\linklist.cpp
+	"LinkList.h"
+
+1509504363 c:\users\administrator\desktop\ecard\ecard\linklist.h
+	<iostream>
+	<fstream>
+
+1509505811 source:c:\users\administrator\desktop\ecard\ecard\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+
+1509505384 c:\users\administrator\desktop\ecard\ecard\ecard.h
+	<string>
+
+1509526198 source:c:\users\lenovo\desktop\ecard\ecard\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+
+1509525807 c:\users\lenovo\desktop\ecard\ecard\ecard.h
+	<string>
+	<iostream>
+
+1509525599 c:\users\lenovo\desktop\ecard\ecard\linklist.h
+	<iostream>
+
+1509525718 c:\users\lenovo\desktop\ecard\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+
+1509526198 source:d:\document and settings2\administrator\desktop\ecard2\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+
+1509525807 d:\document and settings2\administrator\desktop\ecard2\ecard.h
+	<string>
+	<iostream>
+
+1509525599 d:\document and settings2\administrator\desktop\ecard2\linklist.h
+	<iostream>
+
+1509547521 d:\document and settings2\administrator\desktop\ecard2\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+
+1509611234 source:d:\document and settings2\administrator\desktop\ecard\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+
+1509548347 d:\document and settings2\administrator\desktop\ecard\ecard.h
+	<string>
+	<iostream>
+
+1509617746 d:\document and settings2\administrator\desktop\ecard\linklist.h
+	<iostream>
+
+1509611002 d:\document and settings2\administrator\desktop\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+
