@@ -9,16 +9,19 @@ template <typename T> class LinkList;	// 提前声明
 template <typename T> class Node		// 结点类
 {
 public:
-	Node(const T &t=0) : data(t)		// 冒号语法初始化组合成员
+	Node(const T &t=0) : data(t),n(m)		// 冒号语法初始化组合成员
 	{
+	    m++;
 	}
 	friend class LinkList<T>;			// 声明友元类
 	friend class LFR;
 private:
 	T data;
+	static int m;
+	int n;
 	Node *next;
 };
-
+template <typename T> int Node<T>::m=1;
 template <typename T> class LinkList
 {
 protected:
@@ -41,25 +44,12 @@ public:
 	T  & CurData() const;				// 引用返回当前结点本身
 	int  CurPos() const;				// 返回当前结点序号。0 为首结点，-1 无当前结点
 	int  NumNodes() const;				// 返回当前链表结点数
-	// 插入结点
 	void InsBeforeHeadNode(const T &t);	// 链首结点前，成为新链首
-//	void InsBeforeCurNode(const T &t);	// 当前结点之前
-//	void InsAfterCurNode(const T &t);	// 当前结点之后
-//	void Append(const T &t);			// 尾结点后，成为新尾结点
-	// 删除结点
 	void DeleteCurNode();				// 当前结点
 	void FreeList();					// 释放所有结点
-	// 修改
-//	void Change(const T &t);			// 修改当前结点数据
-	// 输出
 	void ShowCurData() const;			// 输出当前结点数据
 	void ShowList(int LinePerNode=0) const;			// 输出所有结点数据
-	// 链表其他操作
 	void Reverse();						// 结点顺序倒置
-//	template <typename T1>
-//	void Sort(const T1 &t, bool ascending=true);
-//			// 根据指定（转换）类型的关系运算排序。默认升序，否则降序
-
 };
 
 template <typename T>
@@ -205,12 +195,10 @@ template <typename T> T & LinkList<T>::CurData() const
 template <typename T> int LinkList<T>::CurPos() const
 {
 	if(cur_node==NULL) return -1;
-	int n = 0;
 	for(Node<T> *p = head; p!=NULL; p=p->next)
 	{
 		if(p == cur_node)
-			return n;
-		n++;
+			return p.n;
 	}
 	return -1;
 }
@@ -229,49 +217,6 @@ void LinkList<T>::InsBeforeHeadNode(const T &t)
 	head = p;
 	cur_node = head;
 }
-
-//template <typename T>
-//void LinkList<T>::InsBeforeCurNode(const T &t)
-//{
-//	Skip(-1);
-//	if(cur_node==NULL)
-//		InsBeforeHeadNode(t);
-//	else
-//		InsAfterCurNode(t);
-//}
-//
-//template <typename T>
-//void LinkList<T>::InsAfterCurNode(const T &t)
-//{
-//	if(cur_node==NULL)
-//		Append(t);
-//	else
-//	{
-//		num++;
-//		Node<T> *p = new Node<T>(t);
-//		p->next = cur_node->next;
-//		cur_node->next = p;
-//		cur_node = p;
-//	}
-//}
-//
-//template <typename T> void LinkList<T>::Append(const T &t)
-//{
-//	Node<T> *p = head;
-//	num++;
-//	if(head==NULL)
-//		head = p = new Node<T>(t);
-//	else
-//	{
-//		while(p->next != NULL)
-//			p = p->next;
-//		p->next = new Node<T>(t);
-//		p = p->next;
-//	}
-//	p->next = NULL;
-//	cur_node = p;
-//
-//}
 
 template <typename T> void LinkList<T>::DeleteCurNode()
 {

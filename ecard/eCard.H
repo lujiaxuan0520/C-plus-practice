@@ -2,6 +2,7 @@
 #define eCard_H
 #include <string>
 #include <iostream>
+#include<cstdlib>
 //#include "LFR.h"
 using namespace std;
 class record
@@ -12,7 +13,7 @@ public:
     }
     friend ostream& operator<<(ostream& out,record &r)
     {
-        cout<<"\n"<<r.expense<<"\t"<<r.date<<"\t"<<r.time<<endl;
+        cout<<r.expense<<"\t"<<r.date<<"\t"<<r.time;
         return out;
     }
     friend class LFR;

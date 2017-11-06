@@ -68,3 +68,117 @@
 	"LinkList.h"
 	<string>
 
+1509893562 source:e:\ctemp\project\c++ practice\ecard\main.cpp
+	<iostream>
+	<string>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+	<windows.h>
+	<fstream>
+	<vector>
+	<iomanip>
+	<conio.h>
+
+1509893887 e:\ctemp\project\c++ practice\ecard\ecard.h
+	<string>
+	<iostream>
+	<cstdlib>
+
+1509811800 e:\ctemp\project\c++ practice\ecard\linklist.h
+	<iostream>
+
+1509893887 e:\ctemp\project\c++ practice\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+	<cstdlib>
+	<iomanip>
+
+1509690098 source:c:\users\lenovo\desktop\ecard v1.0\ecard\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+
+1509628888 c:\users\lenovo\desktop\ecard v1.0\ecard\ecard.h
+	<string>
+	<iostream>
+	<cstdlib>
+
+1509688951 c:\users\lenovo\desktop\ecard v1.0\ecard\linklist.h
+	<iostream>
+
+1509690271 c:\users\lenovo\desktop\ecard v1.0\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+	<cstdlib>
+
+1509690841 source:c:\users\lenovo\desktop\ecard v1.1\ecard\main.cpp
+	<iostream>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+
+1509628888 c:\users\lenovo\desktop\ecard v1.1\ecard\ecard.h
+	<string>
+	<iostream>
+	<cstdlib>
+
+1509688951 c:\users\lenovo\desktop\ecard v1.1\ecard\linklist.h
+	<iostream>
+
+1509690826 c:\users\lenovo\desktop\ecard v1.1\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+	<cstdlib>
+
+1509693842 source:c:\users\lenovo\desktop\ecard v1.2\ecard\main.cpp
+	<iostream>
+	<string>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+	<windows.h>
+
+1509628888 c:\users\lenovo\desktop\ecard v1.2\ecard\ecard.h
+	<string>
+	<iostream>
+	<cstdlib>
+
+1509688951 c:\users\lenovo\desktop\ecard v1.2\ecard\linklist.h
+	<iostream>
+
+1509691956 c:\users\lenovo\desktop\ecard v1.2\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+	<cstdlib>
+
+1509811306 source:c:\users\lenovo\desktop\ecard v1.3\ecard\main.cpp
+	<iostream>
+	<string>
+	"eCard.H"
+	"LinkList.h"
+	"LFR.h"
+	<windows.h>
+	<iomanip>
+	<conio.h>
+
+1509628888 c:\users\lenovo\desktop\ecard v1.3\ecard\ecard.h
+	<string>
+	<iostream>
+	<cstdlib>
+
+1509811800 c:\users\lenovo\desktop\ecard v1.3\ecard\linklist.h
+	<iostream>
+
+1509811162 c:\users\lenovo\desktop\ecard v1.3\ecard\lfr.h
+	"eCard.h"
+	"LinkList.h"
+	<string>
+	<cstdlib>
+	<iomanip>
+
