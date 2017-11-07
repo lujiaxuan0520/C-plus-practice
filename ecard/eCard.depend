@@ -68,7 +68,7 @@
 	"LinkList.h"
 	<string>
 
-1509893562 source:e:\ctemp\project\c++ practice\ecard\main.cpp
+1510038774 source:e:\ctemp\project\c++ practice\ecard\main.cpp
 	<iostream>
 	<string>
 	"eCard.H"
@@ -80,15 +80,15 @@
 	<iomanip>
 	<conio.h>
 
-1509893887 e:\ctemp\project\c++ practice\ecard\ecard.h
+1509977547 e:\ctemp\project\c++ practice\ecard\ecard.h
 	<string>
 	<iostream>
 	<cstdlib>
 
-1509811800 e:\ctemp\project\c++ practice\ecard\linklist.h
+1510040155 e:\ctemp\project\c++ practice\ecard\linklist.h
 	<iostream>
 
-1509893887 e:\ctemp\project\c++ practice\ecard\lfr.h
+1510040155 e:\ctemp\project\c++ practice\ecard\lfr.h
 	"eCard.h"
 	"LinkList.h"
 	<string>

@@ -6,7 +6,7 @@
 #include<cstdlib>
 #include <iomanip>
 using namespace std;
-class LFR :public LinkList<record>
+class LFR :public LinkList<record>      //LFR=LinkList for Record
 {
 public:
     LFR(string Name="",string id="",const record *t=NULL,int n=0):LinkList(t,n),name(Name),ID(id)
@@ -23,16 +23,16 @@ public:
     }
     virtual ~LFR();
     LFR & operator=(const LFR &list);
-    double Sum();
-    double CurNodeExpense();
-    string Name();
-    string Id();
-    void InsBeforeHeadNode(const record &t);
-    void DeleteCurNode();
-    void FreeList();
-    void ShowList()const;
-    void Find(const string &a,const string &b);
-    double RecountSum();
+    double Sum() const;
+    string Name() const;
+    string Id() const;
+    void InsBeforeHeadNode(const record &t);//重载插入头节点
+    void DeleteCurNode();                   //重载删除当前结点
+    void FreeList();                        //重载释放链表
+    void ShowList()const;                   //输出链表
+    void Find(const string &a,const string &b);//寻找到时间范围为a~b的消费记录并输出
+    double RecountSum();                    //重新根据结点数据计算余额
+
 private:
     double sum;//余额
     string name;//对象姓名
@@ -44,23 +44,26 @@ LFR & LFR::operator=(const LFR &list)
 {
     if(list.head==this->head) return *this;
     FreeList();
-    Node<record> *p, *pTail, *temp=list.head;
-    if((num=list.num) == 0)
+    Node<record> *p, *p2, *pl=list.head;
+    num=list.num;
+    if(num == 0)
     {
-        head = cur_node = NULL;
+        head = NULL;
+		cur_node=NULL;
         return *this;
     }
-    head = pTail = new Node<record>(list.head->data);
+    p2 = new Node<record>(list.head->data);
+	head=p2;
     if(list.head == list.cur_node) cur_node = head;
     for(int i=1; i<num; i++)
     {
-        temp = temp->next;
-        p = new Node<record>(temp->data);
-        if(temp == list.cur_node) cur_node = p;
-        pTail->next = p;
-        pTail = p;
+        pl = pl->next;
+        p = new Node<record>(pl->data);
+        if(pl == list.cur_node) cur_node = p;
+        p2->next = p;
+        p2 = p;
     }
-    pTail->next = NULL;
+    p2->next = NULL;
     sum=RecountSum();
     name=list.name;
     ID=list.ID;
@@ -79,22 +82,17 @@ void LFR::FreeList()
     ID="";
 }
 
-double LFR::Sum()
+double LFR::Sum() const
 {
     return sum;
 }
 
-double LFR::CurNodeExpense()
-{
-    return cur_node->data.expense;
-}
-
-string LFR::Name()
+string LFR::Name() const
 {
     return name;
 }
 
-string LFR::Id()
+string LFR::Id() const
 {
     return ID;
 }
@@ -121,6 +119,7 @@ void LFR::DeleteCurNode()
         cur_node = head;
         return;
     }
+    //捕获当前结点的前一个结点
     Node<record> *p = head;
     while(p->next!=NULL && p->next!=cur_node)
         p = p->next;
@@ -154,65 +153,19 @@ void LFR::Find(const string &a,const string &b)
     {
         int temp=_min;_min=_max;_max=temp;
     }
-    cur_node=head;
-    Node<record> *p1=NULL;
-    if(_max>=atoi(cur_node->data.date.c_str()))
+    cout<<setfill(' ')<<setw(10)<<"日期"<<setw(10)<<"时间"<<setw(10)<<"消费"<<endl;
+    bool isFind=false;
+    for(cur_node=head;cur_node!=NULL;cur_node=cur_node->next)
     {
-            p1=cur_node;
-    }
-    for(;cur_node->next!=NULL;cur_node=cur_node->next)//max尽量向后面位置赋值
-    {
-        if(_max>=atoi(cur_node->data.date.c_str()))
+        if(_min<=atoi(cur_node->data.date.c_str())&&_max>=atoi(cur_node->data.date.c_str()))
         {
-            p1=cur_node;break;
-        }
-        else if(_max<atoi(cur_node->data.date.c_str())&&_max>=atoi(cur_node->next->data.date.c_str()))
-        {
-            p1=cur_node->next;break;
-        }
-    }
-    Node<record> *p2=NULL;
-    cur_node=head;
-    if(_min<=atoi(cur_node->data.date.c_str()))
-    {
-            p2=cur_node;
-    }
-    for(;cur_node->next!=NULL;cur_node=cur_node->next)//min尽量向当前位置赋值
-    {
-        if(_min>atoi(head->data.date.c_str()))
-        {
-            break;
-        }
-        else if(_min<=atoi(cur_node->data.date.c_str())&&_min>atoi(cur_node->next->data.date.c_str()))
-        {
-            p2=cur_node;break;
-        }
-    }
-    if(atoi(this->GoBottom()->data.date.c_str())>=_min)
-    {
-        p2=this->GoBottom();
-    }
-    if(p1==NULL||p2==NULL||p2->n>p1->n)//如果出现都小或都大或者都在中间就不输出
-    {
-        cout<<"抱歉没有该时间段的记录"<<endl;
-    }
-    else
-    {
-        cout<<setfill(' ')<<setw(10)<<"日期"<<setw(10)<<"时间"<<setw(10)<<"消费"<<endl;
-        for(cur_node=p1;cur_node->n >= p2->n;)//循环控制输出防止越界
-        {
+            isFind=true;
             cout<<setw(10)<<cur_node->data.date<<setw(10)<<cur_node->data.time<<setw(10)<<cur_node->data.expense<<endl;
-            if(cur_node->next!=NULL)
-            {
-                cur_node=cur_node->next;
-            }
-            else
-            {
-                break;
-            }
         }
     }
+    if(!isFind) cout<<"未查询到相关记录！"<<endl;
 }
+
 void LFR::ShowList()const
 {
     cout<<"你的余额："<<sum<<endl;

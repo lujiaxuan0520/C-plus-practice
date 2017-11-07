@@ -21,7 +21,6 @@ void init_show()
     cout<<'*'<<setw(29)<<'*'<<endl;
     cout<<'*'<<setw(29)<<'*'<<endl;
     cout<<setfill('*')<<setw(30)<<'*'<<endl;
-    cout<<"请输入你的学号：";
 }
 void test1(LFR &c)
 {
@@ -45,17 +44,21 @@ void test3( LFR &c)
     cout<<"按下任意键以继续";
     getch();
 }
+
 int main()
 {
     string student_id,password;
     init_show();
+    here:
+    cout<<"请输入你的学号：";
     cin>>student_id;                            //手动输入的学号
     string filename=student_id+".txt";          //学生学号对应文件名，如16122198.txt
     //读文件操作
     ifstream istrm(filename);
     if(!istrm)
     {
-        fprintf(stderr,"数据库中无该学生！",filename.c_str());
+        fprintf(stderr,"数据库中无该学生！\n",filename.c_str());
+        goto here;
     }
     const char* Stu_name=NULL;
     string xname;
@@ -89,6 +92,7 @@ int main()
         }
     }
     LFR c(xname,xid,&vec[0],vec.size());      //用从文件中读取到的学生及消费信息构造一个LFR对象
+    istrm.close();
     cout<<"请输入你的密码：";
     cin>>password;
     for(int i=1;;i++)

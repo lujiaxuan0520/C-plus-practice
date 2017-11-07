@@ -3,7 +3,6 @@
 #include <string>
 #include <iostream>
 #include<cstdlib>
-//#include "LFR.h"
 using namespace std;
 class record
 {
@@ -13,7 +12,7 @@ public:
     }
     friend ostream& operator<<(ostream& out,record &r)
     {
-        cout<<r.expense<<"\t"<<r.date<<"\t"<<r.time;
+        out<<r.expense<<" "<<r.date<<" "<<r.time<<endl;
         return out;
     }
     friend class LFR;
