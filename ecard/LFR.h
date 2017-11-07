@@ -9,7 +9,7 @@ using namespace std;
 class LFR :public LinkList<record>      //LFR=LinkList for Record
 {
 public:
-    LFR(string Name="",string id="",const record *t=NULL,int n=0):LinkList(t,n),name(Name),ID(id)
+    LFR(string Name="",string id="",const record *t=NULL,int n=0):LinkList(t,n),name(Name),ID(id) //¹¹Ôìº¯Êý
     {
         sum=0;
         for(int i=0;i<n;++i)

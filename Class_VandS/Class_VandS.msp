@@ -88,7 +88,7 @@ extraResourceOptions=
 [Resource]
 [Other]
 [History]
-Vector.h,386
-String.h,0
-Base.h,0
-main.cpp,139
+main.cpp,131
+Base.h,135
+String.h,329
+Vector.h,133

@@ -6,8 +6,7 @@ template <typename T>
 class Vector:public Base<T>
 {
 public:
-    Vector(int size=0,const T *x=NULL):Base<T>(size,x){}
-    Vector (const Vector<T> &v):Base<T>(v){}
+    Vector(int size=0,const T *x=NULL):Base<T>(size,x){}    
     Vector operator+(const Vector<T> &v) const throw(double);//向量相加，与字符串的处理方法不同
     Vector & operator+=(const Vector<T> &v);
     Vector operator*(int n) const;                           //向量数乘

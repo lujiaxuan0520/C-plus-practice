@@ -71,7 +71,7 @@ LinkList<T>::LinkList(const LinkList<T> &list)
 {
     head=cur_node=NULL;
     num=0;
-    *this=list;
+    *this=list;   //此处调用了赋值运算符
 }
 
 template <typename T>
